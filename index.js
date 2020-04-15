@@ -76,7 +76,7 @@ io.on("connection", socket => {
     });
    
   });
-  socket.on("seen", message => {
+  socket.on("sent", message => {
     message['isSent'] = true;
     Message.updateOne({ _id : { $eq: message._id } }, message, (err, data) => {
       if(data){
